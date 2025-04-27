@@ -62,12 +62,8 @@ export default function DiceGame() {
        abi: MONAD_ARCADE_CONTRACT_ABI,
        functionName: 'MIN_BET',
      });
-     const minBetMon = minBetWei ? parseFloat(formatEther(minBetWei)) : null;
-     // You could display minBetMon to the user
-
-
-    // --- Watch for DiceBetPlaced Event ---
-    // This event fires immediately after a bet is placed on-chain
+    const minBetMon = typeof minBetWei === "bigint" ? parseFloat(formatEther(minBetWei)) : null;
+ 
     useWatchContractEvent({
         address: MONAD_ARCADE_CONTRACT_ADDRESS,
         abi: MONAD_ARCADE_CONTRACT_ABI,
@@ -79,21 +75,14 @@ export default function DiceGame() {
                 const latestBetEvent = logs[logs.length - 1].args;
                  if (latestBetEvent) {
                    console.log("DiceBetPlaced Event Received:", latestBetEvent);
-                   // You could update UI here, e.g., show "Transaction submitted, waiting for roll..."
-                   setIsRolling(true); // Set rolling state when bet is placed on-chain
+                    setIsRolling(true); // Set rolling state when bet is placed on-chain
                    setLastResult(null); // Clear previous result
                    setLastRoll(null); // Clear previous roll
                    setLastPayout(null); // Clear previous payout
                  }
             }
-        },
-        // Optional: filter by player address if needed
-        // args: { player: address },
+        }, 
     });
-
-
-    // --- Watch for DiceRollResult Event ---
-    // This event fires after the contract resolves the game
     useWatchContractEvent({
         address: MONAD_ARCADE_CONTRACT_ADDRESS,
         abi: MONAD_ARCADE_CONTRACT_ABI,
@@ -138,9 +127,7 @@ export default function DiceGame() {
                     setIsRolling(false); // Stop rolling state if something went wrong or didn't match
                 }
             }
-        },
-        // Optional: filter by gameId if you track it locally after sending transaction
-        // args: { gameId: latestSentGameId },
+        }, 
     });
 
 
@@ -159,9 +146,7 @@ export default function DiceGame() {
              // Update UI state to show transaction is mined, waiting for events
         }
         if (isConfirmed) {
-            console.log("Transaction confirmed!", hash);
-             // Event listener should handle the result, but you could add a fallback here
-             // If events are missed, you might need to poll contract state or refetch history
+            console.log("Transaction confirmed!", hash); 
         }
         if (writeError) {
             console.error("Transaction write error:", writeError);
@@ -214,11 +199,7 @@ export default function DiceGame() {
       args: [betTypeSolidity, targetNum], // Pass bet type (enum) and target number
       value: betAmountWei, // Send the bet amount as value
     });
-
-    // State updates are now primarily driven by events and transaction status
-    // setIsRolling(true); // Set when tx is pending/submitted (handled in useEffect or event listener)
-    // setLastRoll(null); // Cleared in useEffect
-    // setLastResult(null); // Cleared in useEffect
+ 
   }
 
   const getDiceIcon = (value: number) => {
@@ -251,13 +232,7 @@ export default function DiceGame() {
               {getDiceIcon(value)}
             </div>
           );
-       }
-
-       // For values > 6 (or 2-12 where sum is > 6), split into two dice
-       // This is a simplified visual representation. The contract provides the total roll.
-       // You might need a more sophisticated way to represent two dice summing to the roll value.
-       // For simplicity, let's just show the total roll number icon if > 6, or keep the split if desired.
-       // Sticking to the original logic of splitting sum > 6:
+       } 
        const dice1 = Math.min(6, Math.floor(value / 2));
        const dice2 = Math.min(6, value - dice1);
        // Basic validation to ensure dice sum up to value and are within 1-6
