@@ -62,7 +62,7 @@ export default function PredictionFlip() {
        abi: MONAD_ARCADE_CONTRACT_ABI,
        functionName: 'MIN_BET',
      });
-     const minBetMon = minBetWei ? parseFloat(formatEther(minBetWei)) : null;
+    const minBetMon = typeof minBetWei === "bigint" ? parseFloat(formatEther(minBetWei)) : null;
      // You could display minBetMon to the user
 
 

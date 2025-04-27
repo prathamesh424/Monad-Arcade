@@ -5,7 +5,7 @@ import { http, createConfig } from 'wagmi'
 import { base, mainnet, optimism } from 'wagmi/chains'
 import { injected, metaMask, safe, walletConnect } from 'wagmi/connectors'
 
-const projectId = '144a8240d6b6330a5841795fbbff5ba9'
+const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || '144a8240d6b6330a5841795fbbff5ba9'
 
 export const config = createConfig({
   chains: [mainnet, base],

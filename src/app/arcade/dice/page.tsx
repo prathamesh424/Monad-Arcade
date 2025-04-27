@@ -72,7 +72,7 @@ export default function DiceGame() {
             // Process the latest bet placed event
             if (logs && logs.length > 0) {
                 // Assuming the last log is the most recent bet
-                const latestBetEvent = logs[logs.length - 1].args;
+                const latestBetEvent = logs[logs.length - 1];
                  if (latestBetEvent) {
                    console.log("DiceBetPlaced Event Received:", latestBetEvent);
                     setIsRolling(true); // Set rolling state when bet is placed on-chain
@@ -96,7 +96,7 @@ export default function DiceGame() {
                 if (ourGameLog && ourGameLog.args) {
                   const { gameId, roll, result: gameResultSolidity, payout: payoutWei } = ourGameLog.args;
 
-                   console.log("DiceRollResult Event Received:", ourGameLog.args);
+                   console.log("DiceRollResult Event Received:", ourGameLog);
 
                     const result = gameResultSolidity === 1 ? "win" : "lose"; // Map Solidity enum to string
                     const payoutMon = parseFloat(formatEther(payoutWei || 0)); // Convert payout from wei to MON

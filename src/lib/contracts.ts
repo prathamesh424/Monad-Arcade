@@ -1,7 +1,7 @@
 // lib/contracts.ts
 ""
 // Replace with the actual deployed address of your MonadArcade contract
-export const MONAD_ARCADE_CONTRACT_ADDRESS = "0xd9145CCE52D386f254917e481eB44e9943F39138";
+export const MONAD_ARCADE_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_MONAD_ARCADE_CONTRACT_ADDRESS || "0xd9145CCE52D386f254917e481eB44e9943F39138";
 
 // Replace with the actual ABI copied from Remix
 export const MONAD_ARCADE_CONTRACT_ABI = [
