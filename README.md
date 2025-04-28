@@ -8,7 +8,7 @@
 
 ## 📌 Problem Statement
 
-**Problem Statement: Building Decentralized Applications (dApps)**
+**PS 2: Unleash blockchain gameplay with Monad**
 
 The challenge of creating user-friendly, performant, and truly decentralized applications that leverage the unique capabilities of blockchain technology, specifically within the high-throughput environment of Monad. A sub-problem addressed is the lack of transparent and verifiable random outcomes in traditional online gaming.
 
@@ -23,13 +23,9 @@ Monad Arcade aims to solve the problem of centralized and opaque online gaming b
 ## 🧠 Team & Approach
 
 ### Team Name:
-`[Your Team Name Here]`
+`[ Crypto Whales]`
 
-### Team Members:
-- [Your Name 1] ([GitHub Link] / [LinkedIn Link] / [Your Role])
-- [Your Name 2] ([GitHub Link] / [LinkedIn Link] / [Your Role])
-- [Your Name 3] ([GitHub Link] / [LinkedIn Link] / [Your Role])
-*(Add links if you want)*
+ 
 
 ### Your Approach:
 - We chose this problem to demonstrate the practical application of smart contracts and blockchain technology for interactive, user-facing products beyond just finance or collectibles. Casual games provide a great use case for showcasing transparent logic and direct value transfer.
@@ -49,7 +45,7 @@ Monad Arcade aims to solve the problem of centralized and opaque online gaming b
 
 ### Sponsor Technologies Used (if any):
 - [ ] **Groq:** _[Explain if used, e.g., for AI-driven game hints, player analytics, etc.]_
-- [x] **Monad:** Our core blockchain implementation. We built and deployed our smart contract on the Monad Testnet, leveraging its EVM compatibility and experiencing its performance for transaction processing and event propagation.
+-  ✅ **Monad:** Our core blockchain implementation. We built and deployed our smart contract on the Monad Testnet, leveraging its EVM compatibility and experiencing its performance for transaction processing and event propagation.
 - [ ] **Fluvio:** _[Explain if used, e.g., for real-time stream processing related to game events]_
 - [ ] **Base:** _[Explain if used, e.g., Smart Wallet integration for easier user onboarding]_
 - [ ] **Screenpipe:** _[Explain if used, e.g., for analyzing user interaction patterns]_
@@ -81,12 +77,11 @@ Add images, GIFs, or screenshots if helpful!
 
 ## ✅ Tasks & Bonus Checklist
 
-- [ ] **All members of the team completed the mandatory task - Followed at least 2 of our social channels and filled the form** (Details in Participant Manual)
-- [ ] **All members of the team completed Bonus Task 1 - Sharing of Badges and filled the form (2 points)**  (Details in Participant Manual)
-- [ ] **All members of the team completed Bonus Task 2 - Signing up for Sprint.dev and filled the form (3 points)**  (Details in Participant Manual)
+- ✅ **All members of the team completed the mandatory task - Followed at least 2 of our social channels and filled the form** (Details in Participant Manual)
+- ✅ **All members of the team completed Bonus Task 1 - Sharing of Badges and filled the form (2 points)**  (Details in Participant Manual)
+- ✅ **All members of the team completed Bonus Task 2 - Signing up for Sprint.dev and filled the form (3 points)**  (Details in Participant Manual)
 
-*(Mark with ✅ if completed)*
-
+ 
 ---
 
 ## 🧪 How to Run the Project
